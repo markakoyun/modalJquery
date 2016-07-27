@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/normalize.css">
+	
+	<script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
+
+	<style type="text/css">
+
+	body {
+    position: relative; /* needed for the overlay to extend when you scroll */
+    /* general styles */
+
+	}
+
+	
+	 .overlay{
+	  position: fixed;
+	  top: 0;
+	  left: 0;
+	  height: 100%;
+	  width: 100%;
+	  background-color: rgba(0,0,0,0.5);
+	  display: none;
+	  
+	 }
+
+	 .modal{
+	 	margin:150px auto;
+	 	max-width:500px;
+	 	min-height: 200px;
+	 	background-color: #fff;
+	 	border-radius: 5px;
+	 	box-shadow:0 5px 15px rgba(0,0,0,.5);
+	 	display: none;
+	 	word-wrap: break-word;
+	 
+	 }
+
+	 .modal-close{
+	 	position: absolute;
+    	right: 450px;
+    	top: 160px;
+	 	font-weight: 600;
+	 	color: #000;
+	 	cursor: pointer;
+	 }
+
+	 .modal-content{
+	 	border-top: 1px solid #e5e5e5;
+	 	border-bottom: 1px solid #e5e5e5;
+	 	padding: 20px 15px;
+
+	 }
+	  .modal-header{
+	 	padding: 20px 15px;
+	 }
+
+	 .modal-footer{
+	 	padding: 20px 15px;
+	 	text-align: right;
+	 }
+
+	</style>
+</head>
+<body>
+ <div class="overlay">
+	
+  	<div class="modal">
+ 		<div class="modal-header">
+ 			<div class="title">Test</div>
+ 		</div>
+ 		<div class="modal-close">x</div>
+ 		<div class="modal-content">
+ 			<p>HAHAAHAhahahahahahahahahahasdadsaHAHAAHAhahahahahahahahahahasdadsa</p>
+ 		</div>
+ 		<div class="modal-footer">
+ 			<button>Close</button>
+ 		</div>
+ 	</div>
+  </div>
+
+ 	<button id="test">Test</button>
+</body>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		var overlay = $('.overlay');
+		var modal = $('.modal');
+		$('#test').click(function(){
+			overlay.fadeIn(500);
+			modal.fadeIn(500);
+
+		});
+
+		$('.modal-close').click(function(){
+			overlay.fadeOut(500);
+			modal.fadeOut(500);
+		});
+	});
+</script>
+</html>
